@@ -1,13 +1,56 @@
-## Secure Digital Payments Server
+# MestoreumPay 
 
-This project is an example of using a client and server to facilitate transfers between different addresses. Since there is just a single server on the back-end handling transfers, this is clearly very centralized. We won't worry about distributed consensus for this project.
+<p align="center">
+        <p align="center">MestoreumPay (version 1.0.0)</p>
+</p>
 
-However, something that we would like to incoporate is Public Key Cryptography. By using Elliptic Curve Digital Signatures we can make it so the server only allows transfers that have been signed for by the person who owns the associated address.
+<p align="center">
+    This application is an example of using a client and server to facilitate transfers between different addresses. This is to demonstrate the usage of Ethereum Cryptography to securely transfer money from one party to another.
+</p>
 
-### Instructions
-* You SHOULD NOT send the private in the payload to the server
-* The signed message and the message object as part of the payload from client to server.
-* Pass any additional data you might need.
+<p align="center">
+    The client side was built using <strong>Vite</strong> and the server side was built using <strong>Express Js</strong>
+</p>
+
+
+<p align="center">
+    <p align="center">Application Features</p>
+</p>
+
+
+## Features
+
+- Secure payment platform for swift transactions.
+
+- Real-time view of Wallet
+
+- Real-time transfer of any amount to and fro addresses.
+
+- Real-time view of transactions.
+
+- Superb notifications
+
+
+## Runtime Environment
+
+- <b>NodeJs v18.12.1</b>
+
+
+## Packages
+
+- `"ethereum-cryptography": "^2.1.2",`
+- `uuid: "^9.0.0"`
+- `axios: "^0.27.2"`
+- `react: "^18.2.0"`
+- `react-dom: "^18.2.0"`
+- `react-bootstrap: "^2.8.0"`
+- `bootstrap: "^5.3.1"`
+
+
+## Usage
+
+<small>Follow the instructions below:</small> 
+
  
 ### Client
 
@@ -29,4 +72,3 @@ The server folder contains a node.js server using [express](https://expressjs.co
 
 The application should connect to the default server port (3042) automatically! 
 
-_Hint_ - Use [nodemon](https://www.npmjs.com/package/nodemon) instead of `node` to automatically restart the server on any changes.
