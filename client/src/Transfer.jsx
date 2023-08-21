@@ -13,12 +13,12 @@ function Transfer({
   setAlertMessage,
   setIsError,
   setTransactionHistory,
-  transactionHistory
+  transactionHistory,
 }) {
   const [sendAmount, setSendAmount] = useState("");
   const [recipient, setRecipient] = useState("");
   const [transactionMessage, setTransactionMessage] = useState("");
-  
+
   function hashMsg(msg) {
     const _bytes = utf8ToBytes(msg);
     const _hash = keccak256(_bytes);
@@ -58,13 +58,13 @@ function Transfer({
       let transactions = [...transactionHistory];
 
       let newTransaction = {
-        id:transactionId,
-        sender:address,
+        id: transactionId,
+        sender: address,
         recipient,
-        message:transactionMessage,
-        amount:sendAmount,
-        date: (new Date()).toLocaleDateString()
-      }
+        message: transactionMessage,
+        amount: sendAmount,
+        date: new Date().toLocaleDateString(),
+      };
 
       transactions.unshift(newTransaction);
       setTransactionHistory(transactions);
@@ -72,10 +72,12 @@ function Transfer({
       setBalance(balance);
       setAlertMessage(message);
       setAlertState(true);
-      setIsError(false)
+      setIsError(false);
 
+      setTransactionMessage("");
+      setRecipient("");
+      setSendAmount("");
     } catch (ex) {
-
       setAlertMessage(ex.response.data.message);
       setAlertState(true);
       setIsError(true);
@@ -89,7 +91,7 @@ function Transfer({
       <label>
         Send Amount
         <input
-          placeholder="1, 2, 3..."
+          placeholder="Enter an amount"
           value={sendAmount}
           onChange={setValue(setSendAmount)}
         ></input>
@@ -107,13 +109,18 @@ function Transfer({
       <label>
         Message
         <input
+          id="messageDescription"
           placeholder="Enter Message"
           value={transactionMessage}
           onChange={setValue(setTransactionMessage)}
         ></input>
       </label>
 
-      <input type="submit" className="btn btn-success text-center" value="Transfer" />
+      <input
+        type="submit"
+        className="btn btn-success text-center"
+        value="Transfer"
+      />
     </form>
   );
 }
