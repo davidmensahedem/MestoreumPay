@@ -48,8 +48,8 @@ router.post("/send", (req, res) => {
     });
   }
 
-  
-  const hashedMessage = hashMsg(message);
+  let payload = recipient + sender + message + signed;
+  const hashedMessage = hashMsg(payload);
 
   const parsedSignature = processSignature(signed);
 
