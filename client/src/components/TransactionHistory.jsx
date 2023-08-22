@@ -1,3 +1,4 @@
+import { Badge } from "react-bootstrap";
 import Table from "react-bootstrap/Table";
 
 function TransactionHistory({ transactionHistory }) {
@@ -8,7 +9,7 @@ function TransactionHistory({ transactionHistory }) {
           <th>Id</th>
           <th>Sender</th>
           <th>Recipient</th>
-          <th>Amount</th>
+          <th><Badge>Amount</Badge></th>
           <th>Message</th>
           <th>Date</th>
         </tr>
