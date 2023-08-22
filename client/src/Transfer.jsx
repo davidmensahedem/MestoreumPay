@@ -34,13 +34,15 @@ function Transfer({
     try {
       const transactionId = uuidv4();
 
-      const hashedMsg = hashMsg(transactionMessage);
-      const signature = secp.sign(hashedMsg, privateKey);
       const signed = JSON.stringify({
         r: signature.r.toString(),
         s: signature.s.toString(),
         recovery: signature.recovery,
       });
+
+      let payload = recipient + sender + transactionMessage + signed;
+      const hashedMsg = hashMsg(payload);
+      const signature = secp.sign(hashedMsg, privateKey);
 
       const {
         data: {
