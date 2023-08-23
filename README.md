@@ -1,4 +1,4 @@
-# MestoreumPay 
+# MestoreumPay (1.0.0)
 
 <p align="center">
         <p align="center">MestoreumPay (version 1.0.0)</p>
