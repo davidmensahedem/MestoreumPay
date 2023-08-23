@@ -61,6 +61,7 @@ router.post("/send", (req, res) => {
     publicKey
   );
 
+  // return a forbidden action if false
   if (!isVerified) {
     return res.status(403).json({
       message: "Action forbidden!",
